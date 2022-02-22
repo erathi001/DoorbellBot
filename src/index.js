@@ -1,14 +1,14 @@
 const {Client, Intents, Message, CommandInteractionOptionResolver} = require("discord.js")
 const {joinVoiceChannel, createAudioPlayer, createAudioResource, StreamType} = require("@discordjs/voice")
 const {createReadStream} = require('fs')
-const TOKEN = "OTMzNjAxNjUxNDgxMjU1OTg2.Yej6Sw.HoYTlBWXfmVs60k_KfCp5Udu45M"
 require("dotenv").config()
+
 const client = new Client({
     intents:["GUILDS", "GUILD_MESSAGES", "GUILD_VOICE_STATES"]
 })
 
 
-client.login(TOKEN)
+client.login(process.env.TOKEN)
 client.on("ready", () => console.log(`Logged in as ${client.user.tag}`))
 
 client.on("messageCreate", (message) => {
