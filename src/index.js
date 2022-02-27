@@ -10,7 +10,8 @@ const doors= {
     DOOR3: 3,
     }
 
-const prefix = '!'
+43
+let prefix = '!'
 let ready = true
 let voiceChannelID = null
 
@@ -36,6 +37,14 @@ client.on("messageCreate", async (message) => {
         voiceChannelID = message.member.voice.channelId
         let voiceChannel = message.member.voice.channel
         message.reply("successfully joined voice channel " +voiceChannel.name)
+    }
+
+    if(command === "setprefix") {
+        prefix = args[0]
+        if(prefix === undefined){
+            message.reply("must give a prefix")
+            prefix = "!"
+        } else message.reply('Prefix has been set to ' + prefix)
     }
 
     if(command === "ding") {
