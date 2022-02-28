@@ -9,8 +9,7 @@ const doors= {
     DOOR4: 2,
     DOOR3: 3,
     }
-
-43
+    
 let prefix = '!'
 let ready = true
 let voiceChannelID = null
